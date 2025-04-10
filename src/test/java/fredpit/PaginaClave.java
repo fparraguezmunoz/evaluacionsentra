@@ -17,7 +17,6 @@ public class PaginaClave extends BasePage {
         clickElement(btnCambClave);
     }
 
-    
     public void ingresoClave() {;
         clear(clave); 
         clear(repiteclave); 

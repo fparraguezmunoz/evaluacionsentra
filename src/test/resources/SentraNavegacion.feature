@@ -6,27 +6,27 @@ Feature: SentraNavegacion
 #    Then ingreso datos USUARIO
 #    Then presiono boton GRABAR USUARIO
 
-Scenario: abre sitio de sentra para ingresar
+Scenario: Pantalla de inicio del sitio de sentra para ingresar credenciales
     Given Ingreso a url
     When Ingreso credenciales
     When Presiono boton INGRESAR
     
-Scenario: navego en sitio de sentra Tasks
+Scenario: Ingreso a Home a crear Tareas del usuario
     Given Seleccionar boton Home
     Then Presiono boton NUEVA TAREA
     Then Ingreso nueva tarea de Home
     Then Presiono boton CREAR TAREA
 
-Scenario: Navego en sitio sentra Perfil
+Scenario: Validar Ingreso a Perfil para Modificar datos del usuario
     Given Presiono el boton PERFIL
     When Presiono el boton EDITAR DATOS USUARIO
     Then Modifico los datos del usuario
     Then Presiono boton GRABAR USUARIO
 
- Scenario: Cambiar contraseña
+ Scenario: Validar Cambio de contraseña de ingreso
     Given Presiono el boton CAMBIAR CONTRASEÑA
     When Ingreso contraseña nueva
     Then Presiono el boton GUARDAR CONTRASEÑA
 
- Scenario: Salir de la web de sentra
+ Scenario: Validar boton Salir y que rediriga a inicio
     Given Presiono boton SALIR
