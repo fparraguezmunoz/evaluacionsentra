@@ -7,7 +7,9 @@ import fredpit.PaginaClave;
 import fredpit.PaginaPerfil;
 import fredpit.PaginaPrincipal;
 import fredpit.Salir;
- 
+import org.junit.Test;
+import static org.junit.Assert.assertTrue;
+
 public class SentraSteps {
  
    
@@ -69,6 +71,27 @@ public class SentraSteps {
         }
       }
       
+
+
+      public class TestPaginaPrincipal {
+      
+          @Test
+          public void testLoginExitoso() {
+              PaginaPrincipal pagina = new PaginaPrincipal();
+      
+              pagina.navegarSentra();
+              pagina.credenciales();
+              pagina.ClickIngresar();
+      
+              // Esperas que después del login, por ejemplo, aparezca un botón de cerrar sesión
+              String botonLogout = "//button[@id='logout']"; // Esto es un ejemplo
+      
+              boolean estaVisible = pagina.isElementVisible(botonLogout); // Este método lo tendrías que tener en BasePage
+              assertTrue("El login falló, no se encontró el botón de logout", estaVisible);
+          }
+      }
+      
+
       PaginaHome landingPage2 = new PaginaHome();
    
 

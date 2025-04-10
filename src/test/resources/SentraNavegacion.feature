@@ -23,7 +23,7 @@ Scenario: Validar Ingreso a Perfil para Modificar datos del usuario
     Then Modifico los datos del usuario
     Then Presiono boton GRABAR USUARIO
 
- Scenario: Validar Cambio de contraseña de ingreso
+ Scenario: Validar Cambio de contraseña
     Given Presiono el boton CAMBIAR CONTRASEÑA
     When Ingreso contraseña nueva
     Then Presiono el boton GUARDAR CONTRASEÑA

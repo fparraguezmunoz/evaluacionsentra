@@ -23,7 +23,8 @@ public class PaginaPrincipal extends BasePage {
     }
 
     public void ClickIngresar() {
-        clickElement(botonIngresar);
+        clickElement(botonIngresar);  
     }
+
 
 }

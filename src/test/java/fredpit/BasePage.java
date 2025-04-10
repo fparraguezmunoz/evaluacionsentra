@@ -117,5 +117,10 @@ public void write(String xpath, String text) {
     public void clear(String xpath) {
         driver.findElement(By.xpath(xpath)).clear();
     }
+    
+    public boolean isElementVisible(String botonLogout) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'isElementVisible'");
+    }
 
 }

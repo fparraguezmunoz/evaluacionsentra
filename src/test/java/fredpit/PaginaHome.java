@@ -25,10 +25,11 @@ public class PaginaHome extends BasePage {
     }
 
     public void ingNvaTarea(){
+        write(prioridad, "2");
         write(titulo, "Titulo1");
        // write(descripcion,"Descripcion");
       //  write(fecvcto,  "\"01:06:2025\" + Keys.ARROW_RIGHT + \"20:50\"");
-        write(prioridad, "5");
+        
     }
 
     public void ClickGrbTarea() {;

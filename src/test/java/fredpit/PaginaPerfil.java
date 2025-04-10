@@ -24,7 +24,7 @@ public class PaginaPerfil extends BasePage {
     }
 
     public void modifUsuario(){     
-        clear(nombre);  
+        clear(nombre); 
         write(nombre, "");
         clear(apellido);
         write(apellido,"");
