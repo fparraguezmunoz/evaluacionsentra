@@ -3,9 +3,9 @@ package fredpit;
 
 public class PaginaClave extends BasePage {
  
-    private String btnCambClave = "//*[@id=\"root\"]/div/main/div[2]/button[2]";
-    private String clave = "//*[@id=\"password\"]";
-    private String repiteclave = "//*[@id=\"repeat_password\"]";
+    private String btnCambClave = "//button[normalize-space()='Cambiar Contraseña']";
+    private String clave = "//input[@id='password']";
+    private String repiteclave = "//input[@id='repeat_password']";
     private String btngrabarclave = "/html/body/div[2]/div[3]/div/div[2]/button[2]";
 
 

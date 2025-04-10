@@ -1,19 +1,20 @@
 package steps;
 
 import io.cucumber.java.en.*;
-//import fredpit.CrearUsuario;
+import fredpit.CrearUsuario;
 import fredpit.PaginaHome;
 import fredpit.PaginaClave;
 import fredpit.PaginaPerfil;
 import fredpit.PaginaPrincipal;
 import fredpit.Salir;
-import org.junit.Test;
-import static org.junit.Assert.assertTrue;
+import org.testng.asserts.SoftAssert;
+
+
 
 public class SentraSteps {
- 
+    SoftAssert soft = new SoftAssert();
    
-  /*CrearUsuario landingPage = new CrearUsuario();
+  CrearUsuario landingPage = new CrearUsuario();
    
   @Given("Ingreso a web")
     public void web() {
@@ -34,9 +35,15 @@ public class SentraSteps {
   @Then("ingreso datos USUARIO")
     public void ingresoCredenciales0() {
         landingPage.credenciales0();
+        try { 
+          Thread.sleep(5000);
+      } catch (InterruptedException e) { 
+          Thread.currentThread().interrupt(); // Restablece el estado de interrupción
+          e.printStackTrace();
+      }
     }
  
-  @Then("Then presiono boton GRABAR USUARIO")
+  @Then("presiono boton GRABAR USUARIO")
     public void creaUser() {
         landingPage.clickNew();
         try { 
@@ -46,7 +53,7 @@ public class SentraSteps {
           e.printStackTrace();
       }
     }
-      */
+      
     
     PaginaPrincipal landingPage1 = new PaginaPrincipal();
    
@@ -58,7 +65,13 @@ public class SentraSteps {
     @When("Ingreso credenciales")
       public void ingresoCredenciales() {
         landingPage1.credenciales();
+        try { 
+          Thread.sleep(5000);
+      } catch (InterruptedException e) { 
+          Thread.currentThread().interrupt(); // Restablece el estado de interrupción
+          e.printStackTrace();
       }
+    }
    
     @When("Presiono boton INGRESAR")
       public void ingresaWeb() {
@@ -71,27 +84,7 @@ public class SentraSteps {
         }
       }
       
-
-
-      public class TestPaginaPrincipal {
-      
-          @Test
-          public void testLoginExitoso() {
-              PaginaPrincipal pagina = new PaginaPrincipal();
-      
-              pagina.navegarSentra();
-              pagina.credenciales();
-              pagina.ClickIngresar();
-      
-              // Esperas que después del login, por ejemplo, aparezca un botón de cerrar sesión
-              String botonLogout = "//button[@id='logout']"; // Esto es un ejemplo
-      
-              boolean estaVisible = pagina.isElementVisible(botonLogout); // Este método lo tendrías que tener en BasePage
-              assertTrue("El login falló, no se encontró el botón de logout", estaVisible);
-          }
-      }
-      
-
+    
       PaginaHome landingPage2 = new PaginaHome();
    
 
@@ -220,5 +213,21 @@ public class SentraSteps {
         }
         }
   
+
+
+        public void Ejemplulis() {
+          String palabraEsperada = "Pepe";
+          String palabraEncontrada = "Papa";
+   
+          // Soft Assertions: No detienen la ejecución al fallar. Ideal para verificar
+          // muchas cosas pequeñas a la vez.
+          soft.assertEquals(palabraEsperada, palabraEncontrada);
+          soft.assertTrue(palabraEncontrada.contains(palabraEsperada));
+          soft.assertNotEquals(palabraEncontrada,palabraEsperada);
+   
+          soft.assertAll();
+   
+      }
+
       }
     

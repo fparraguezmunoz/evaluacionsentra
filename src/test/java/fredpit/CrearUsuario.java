@@ -2,13 +2,13 @@ package fredpit;
 
 public class CrearUsuario extends BasePage {
     
-    private String btnCrearUser = "//*[@id=\"root\"]/div/form/div/div[3]/div/button[2]";
-    private String nombre = "//*[@id=\"firstname-label\"]";
-    private String apellido = "//*[@id=\"lastname-label\"]";
-    private String correo = "//*[@id=\"email-label\"]";
-    private String pass = "//*[@id=\"password-label\"]";
-    private String repitepass = "//*[@id=\"repeat_password-label\"]";
-    private String btnRegUser = "/html/body/div[2]/div[3]/div/div[2]/button[2]";
+    private String btnCrearUser = "//button[normalize-space()='Crear Nuevo Usuario']";
+    private String nombre = "//input[@id='firstname']";
+    private String apellido = "//input[@id='lastname']";
+    private String correo = "//div[@class='MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-3289sj']//input[@id='email']";
+    private String pass = "//div[@class='MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-3289sj']//input[@id='password']";
+    private String repitepass = "//input[@id='repeat_password']";
+    private String btnRegUser = "//button[normalize-space()='Registrar Usuario']";
 
 
     public CrearUsuario() {
@@ -26,9 +26,9 @@ public class CrearUsuario extends BasePage {
     public void credenciales0(){
         write(nombre, "Fred");
         write(apellido, "Parra");
-        write(correo, "fparraguez@sentra.cl");
-        write(pass, "fparraguez01");
-        write(repitepass, "fparraguez01");
+        write(correo, "fparraguezmunoz@gmail.com");
+        write(pass, "mayo1979");
+        write(repitepass, "mayo1979");
     }
 
     public void clickNew() {

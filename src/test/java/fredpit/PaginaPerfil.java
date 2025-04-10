@@ -3,12 +3,12 @@ package fredpit;
 
 public class PaginaPerfil extends BasePage {
  
-    private String btnIngPerfil = "//*[@id=\"root\"]/div/div/div/ul/a[2]/div";
-    private String ClickEdtUsr = "//*[@id=\"root\"]/div/main/div[2]/button[1]";
-    private String nombre = "//*[@id=\"firstname\"]";
-    private String apellido = "//*[@id=\"lastname\"]";
-    private String email = "//*[@id=\"email\"]";
-    private String btnGrbUser = "/html/body/div[2]/div[3]/div/div[2]/button[2]";
+    private String btnIngPerfil = "//span[normalize-space()='Perfil']";
+    private String ClickEdtUsr = "//button[normalize-space()='Editar Datos Usuario']";
+    private String nombre = "//input[@id='firstname']";
+    private String apellido = "//input[@id='lastname']";
+    private String email = "//input[@id='email']";
+    private String btnGrbUser = "//button[normalize-space()='Modificar Usuario']";
 
 
     public PaginaPerfil() {

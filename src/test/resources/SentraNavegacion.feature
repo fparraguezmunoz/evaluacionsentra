@@ -1,10 +1,10 @@
 Feature: SentraNavegacion
 
-#Scenario: Crea Usuario
-#    Given Ingreso a web
-#    When presiono boton CREAR USUARIO
-#    Then ingreso datos USUARIO
-#    Then presiono boton GRABAR USUARIO
+Scenario: Crea Usuario
+    Given Ingreso a web
+    When presiono boton CREAR USUARIO
+    Then ingreso datos USUARIO
+    Then presiono boton GRABAR USUARIO
 
 Scenario: Pantalla de inicio del sitio de sentra para ingresar credenciales
     Given Ingreso a url
