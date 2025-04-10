@@ -27,7 +27,7 @@ public class BasePage {
      * el 'driver' estático
      * WebDriverWait se usa para poner esperas explícitas en los elementos web
      */
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(05));
  
     /*
      * Configura el WebDriver para Chrome usando WebDriverManager.
@@ -41,6 +41,8 @@ public class BasePage {
         driver = new ChromeDriver();
     }
  
+
+    
     /*
      * Este es el constructor de BasePage que acepta un objeto WebDriver como
      * argumento.
@@ -49,6 +51,10 @@ public class BasePage {
         BasePage.driver = driver;
     }
  
+
+
+
+    
     // Método estático para navegar a una URL.
     public static void navigateTo(String url) {
         driver.get(url);
@@ -65,7 +71,8 @@ public class BasePage {
         return wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
     }
  
-    public void clickElement(String locator) {
+    //freddy 2,3/3
+    /*public void clickElement(String locator) {
         Find(locator).click();
     }
  
@@ -73,7 +80,16 @@ public class BasePage {
         Find(locator).clear();
         Find(locator).sendKeys(keysToSend);
     }
- 
+ */
+
+ public void clickElement(String xpath) {
+    driver.findElement(By.xpath(xpath)).click();
+}
+
+public void write(String xpath, String text) {
+    driver.findElement(By.xpath(xpath)).sendKeys(text);
+}
+
     public void selectFromDropdownByValue(String locator, String value){
         Select dropdown = new Select(Find(locator));
  
@@ -93,5 +109,13 @@ public class BasePage {
  
         return dropdownOptions.size();
     }
- 
+    //freddy 1/3
+    //public void clear(String locator) {
+    //    driver.findElement(By.xpath(locator)).clear();
+    //}
+
+    public void clear(String xpath) {
+        driver.findElement(By.xpath(xpath)).clear();
+    }
+
 }

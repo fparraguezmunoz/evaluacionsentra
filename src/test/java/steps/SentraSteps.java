@@ -1,26 +1,66 @@
 package steps;
 
 import io.cucumber.java.en.*;
+//import fredpit.CrearUsuario;
+import fredpit.PaginaHome;
+import fredpit.PaginaClave;
+import fredpit.PaginaPerfil;
 import fredpit.PaginaPrincipal;
+import fredpit.Salir;
  
 public class SentraSteps {
  
    
-    PaginaPrincipal landingPage = new PaginaPrincipal();
+  /*CrearUsuario landingPage = new CrearUsuario();
+   
+  @Given("Ingreso a web")
+    public void web() {
+        landingPage.ingresarAweb();
+    }
+ 
+  @When("presiono boton CREAR USUARIO")
+      public void ingresaWeb0() {
+          landingPage.ClickCrear();
+          try { 
+            Thread.sleep(5000);
+        } catch (InterruptedException e) { 
+            Thread.currentThread().interrupt(); // Restablece el estado de interrupción
+            e.printStackTrace();
+        }
+      }
+
+  @Then("ingreso datos USUARIO")
+    public void ingresoCredenciales0() {
+        landingPage.credenciales0();
+    }
+ 
+  @Then("Then presiono boton GRABAR USUARIO")
+    public void creaUser() {
+        landingPage.clickNew();
+        try { 
+          Thread.sleep(5000);
+      } catch (InterruptedException e) { 
+          Thread.currentThread().interrupt(); // Restablece el estado de interrupción
+          e.printStackTrace();
+      }
+    }
+      */
+    
+    PaginaPrincipal landingPage1 = new PaginaPrincipal();
    
     @Given("Ingreso a url")
       public void navegar() {
-          landingPage.navegarSentra();
+          landingPage1.navegarSentra();
       }
    
     @When("Ingreso credenciales")
       public void ingresoCredenciales() {
-          landingPage.credenciales();
+        landingPage1.credenciales();
       }
    
     @When("Presiono boton INGRESAR")
       public void ingresaWeb() {
-          landingPage.ClickIngresar();
+          landingPage1.ClickIngresar();
           try { 
             Thread.sleep(5000);
         } catch (InterruptedException e) { 
@@ -29,116 +69,144 @@ public class SentraSteps {
         }
       }
         
+      @Then("Presiono boton CANCELAR NUEVA TAREA")
+      public void cancelarHome() {
+          landingPage1.btnCancelar();
+          try { 
+            Thread.sleep(5000);
+        } catch (InterruptedException e) { 
+            Thread.currentThread().interrupt(); // Restablece el estado de interrupción
+            e.printStackTrace();
+        }
+      }
       
+      PaginaHome landingPage2 = new PaginaHome();
+   
 
+      @Given("Seleccionar boton Home")
+        public void btnHome() {
+            landingPage2.ClickIngHome();
+            try { 
+              Thread.sleep(5000);
+          } catch (InterruptedException e) { 
+              Thread.currentThread().interrupt(); // Restablece el estado de interrupción
+              e.printStackTrace();
+          }
+        }
+       
+      @Then("Presiono boton NUEVA TAREA")
+        public void btntarea() {
+            landingPage2.ClickIngTarea();
+        }
 
-      
-    }
-    /*
-    
+        @Then("Ingreso nueva tarea de Home")
+        public void ingresoTarea() {
+            landingPage2.ingNvaTarea();
+            try { 
+              Thread.sleep(5000);
+          } catch (InterruptedException e) { 
+              Thread.currentThread().interrupt(); // Restablece el estado de interrupción
+              e.printStackTrace();
+          }
+        }
 
+        @Then("Presiono boton CREAR TAREA")
+        public void GrabarTarea() {
+            landingPage2.ClickGrbTarea();
+            try { 
+              Thread.sleep(5000);
+          } catch (InterruptedException e) { 
+              Thread.currentThread().interrupt(); // Restablece el estado de interrupción
+              e.printStackTrace();
+          }
+        }         
+  
+  
 
-    @Then("presiono boton CREAR USUARIO")
-    public void LoginPage() {
-    }
-/
-    @Then("presiono boton REGISTRAR USUARIO")
-    public void LoginPage() {
-    }
-
-    @Then("presiono boton CREAR USUARIO")
-    public void LoginPage() {
-    }
-
-    @Then("Presiono boton CANCELAR")
-    public void LoginPage() {
-    }
-
-
-
-    @Given("Presiono el boton HOME")
-    public void LoginPage() {
-    }
-
-    @Then("Presiono boton NUEVA TAREA")
-    public void LoginPage() {
-    }
-
-    @Then("Ingreso los datos de nueva tarea")
-    public void LoginPage() {
-    }
-
-    @Then("Presiono boton CREAR TAREA")
-    public void LoginPage() {
-    }
-
-    @Then("Presiono boton NUEVA TAREA")
-    public void LoginPage() {
-    }
-
-    @Then("Presiono boton CANCELAR")
-    public void LoginPage() {
-    }
-
-
-
+    PaginaPerfil landingPage3 = new PaginaPerfil();
+   
 
     @Given("Presiono el boton PERFIL")
-    public void LoginPage() {
-    }
+      public void btnPerfil() {
+          landingPage3.ClickIngPerfil();
+          try { 
+            Thread.sleep(5000);
+        } catch (InterruptedException e) { 
+            Thread.currentThread().interrupt(); // Restablece el estado de interrupción
+            e.printStackTrace();
+        }
+      }
+     
+    @When("Presiono el boton EDITAR DATOS USUARIO")
+      public void editUsr() {
+          landingPage3.EditarUsuario();
+      }
 
-    @Then("Presiono el boton EDITAR DATOS USUARIO")
-    public void LoginPage() {
-    }
+      @Then("Modifico los datos del usuario")
+      public void modifUsr() {
+          landingPage3.modifUsuario();
+          try { 
+            Thread.sleep(5000);
+        } catch (InterruptedException e) { 
+            Thread.currentThread().interrupt(); // Restablece el estado de interrupción
+            e.printStackTrace();
+        }
+      }
 
-    @Then("Modifico los datos del usuario")
-    public void LoginPage() {
-    }
+      @Then("Presiono boton GRABAR USUARIO")
+      public void GrabarUser() {
+          landingPage3.ClickGrbUsr();
+          try { 
+            Thread.sleep(5000);
+        } catch (InterruptedException e) { 
+            Thread.currentThread().interrupt(); // Restablece el estado de interrupción
+            e.printStackTrace();
+        }
+      }
+    
+    
 
-    @Then("Presiono boton MODIFICAR USUARIO")
-    public void LoginPage() {
-    }
+    PaginaClave landingPage4 = new PaginaClave();
+    
+    @Given("Presiono el boton CAMBIAR CONTRASEÑA")
+      public void cambioPass() {
+          landingPage4.ClickCamPass();
+      }
 
-    @Then("Presiono el boton Editar datos usuario")
-    public void LoginPage() {
-    }
+      @When("Ingreso contraseña nueva")
+      public void modifClave() {
+          landingPage4.ingresoClave();
+          try { 
+            Thread.sleep(5000);
+        } catch (InterruptedException e) { 
+            Thread.currentThread().interrupt(); // Restablece el estado de interrupción
+            e.printStackTrace();
+        }
+      }
 
-    @Then("Presiono boton CANCELAR")
-    public void LoginPage() {
-    }
+      @Then("Presiono el boton GUARDAR CONTRASEÑA")
+      public void ClickGrClave() {
+          landingPage4.ClickGrClave();
+          try { 
+            Thread.sleep(5000);
+        } catch (InterruptedException e) { 
+            Thread.currentThread().interrupt(); // Restablece el estado de interrupción
+            e.printStackTrace();
+        }
+      }
 
-    @Then("Presiono el boton CAMBIAR CONTRASEÑA")
-    public void LoginPage() {
-    }
-
-    @Then("Ingreso contraseña nueva")
-    public void LoginPage() {
-    }
-
-    @Then("Presiono boton CAMBIAR CONTRASEÑA")
-    public void LoginPage() {
-    }
-
-    @Then("Presiono el boton CAMBIAR CONTRASEÑA")
-    public void LoginPage() {
-    }
-
-    @Then("Presiono boton CANCELAR")
-    public void LoginPage() {
-    }
-
-
-    @Given("Presiono boton SALIR")
-    public void LoginPage() {
-    }
-
-    @Then("Redirecciona al inicio del sitio web")
-    public void LoginPage() {
-    }
-
-    @Then("Limpia credenciales")
-    public void LoginPage() {
-    }
-
-}
-  */  
+      Salir landingPage5 = new Salir();
+    
+      @Given("Presiono boton SALIR")
+        public void SalirWeb() {
+          landingPage5.ClickSalir();
+          try { 
+            Thread.sleep(5000);
+        } catch (InterruptedException e) { 
+            Thread.currentThread().interrupt(); // Restablece el estado de interrupción
+            e.printStackTrace();
+        }
+        }
+  
+      }
+    
