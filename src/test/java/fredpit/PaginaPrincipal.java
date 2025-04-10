@@ -5,7 +5,6 @@ public class PaginaPrincipal extends BasePage {
     private String botonIngresar = "//button[@type='submit']";
     private String usuario = "//input[@id='email']";
     private String password = "//input[@id='password']";
-    private String btnCancelar = "/html/body/div[2]/div[3]/div/div[2]/button[1]";
 
     
 
@@ -27,8 +26,4 @@ public class PaginaPrincipal extends BasePage {
         clickElement(botonIngresar);
     }
 
-    public void ClickCancelar() {
-        clickElement(btnCancelar);
-    }
-    
 }

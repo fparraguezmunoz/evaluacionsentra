@@ -68,17 +68,6 @@ public class SentraSteps {
             e.printStackTrace();
         }
       }
-        
-      @Then("Presiono boton CANCELAR NUEVA TAREA")
-      public void cancelarHome() {
-          landingPage1.btnCancelar();
-          try { 
-            Thread.sleep(5000);
-        } catch (InterruptedException e) { 
-            Thread.currentThread().interrupt(); // Restablece el estado de interrupción
-            e.printStackTrace();
-        }
-      }
       
       PaginaHome landingPage2 = new PaginaHome();
    
