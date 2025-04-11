@@ -17,11 +17,13 @@ public class PaginaPrincipal extends BasePage {
         navigateTo("http://192.168.80.43:10100/");
     }
  
+    //escribir credenciales user y pass
     public void credenciales(){
         write(usuario, "fparraguezmunoz@gmail.com");
         write(password, "mayo1979");
     }
 
+    //boton grabar credenciales
     public void ClickIngresar() {
         clickElement(botonIngresar);  
     }

@@ -71,31 +71,25 @@ public class BasePage {
         return wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
     }
  
-    //freddy 2,3/3
-    /*public void clickElement(String locator) {
+    //elemento click
+    public void clickElement(String locator) {
         Find(locator).click();
     }
  
-    public void write(String locator, String keysToSend){
+    // elemento para escritura 
+    public void write(String locator, String textToWrite){
         Find(locator).clear();
-        Find(locator).sendKeys(keysToSend);
+        Find(locator).sendKeys(textToWrite);
     }
- */
-
- public void clickElement(String xpath) {
-    driver.findElement(By.xpath(xpath)).click();
-}
-
-public void write(String xpath, String text) {
-    driver.findElement(By.xpath(xpath)).sendKeys(text);
-}
-
+ 
+    // elemento para seleccion multiple drop
     public void selectFromDropdownByValue(String locator, String value){
         Select dropdown = new Select(Find(locator));
  
         dropdown.selectByValue(value);
     }
  
+    // elemento para seleccion multiple drop 
     public void selectFromDropdownByIndex(String locator, Integer index){
         Select dropdown = new Select(Find(locator));
  
@@ -114,6 +108,8 @@ public void write(String xpath, String text) {
     //    driver.findElement(By.xpath(locator)).clear();
     //}
 
+
+    // limpiar elemento
     public void clear(String xpath) {
         driver.findElement(By.xpath(xpath)).clear();
     }
@@ -122,5 +118,12 @@ public void write(String xpath, String text) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'isElementVisible'");
     }
+
+    // recuperar texto
+    public String obtenerTexto(String locator) {
+        WebElement div = driver.findElement(By.xpath(locator));  // Encuentra el div por su xpath
+        return div.getText();  // Devuelve el texto del div
+    }
+
 
 }

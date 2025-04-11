@@ -12,18 +12,21 @@ import org.testng.asserts.SoftAssert;
 
 
 public class SentraSteps {
-    SoftAssert soft = new SoftAssert();
+   SoftAssert soft = new SoftAssert();
    
-  CrearUsuario landingPage = new CrearUsuario();
+  //pasos para crear nuevo usuario
+  CrearUsuario nuevouser = new CrearUsuario();
    
+  //ingresar a la web
   @Given("Ingreso a web")
     public void web() {
-        landingPage.ingresarAweb();
+      nuevouser.ingresarAweb();
     }
  
+    //presionar boton crear usuario
   @When("presiono boton CREAR USUARIO")
       public void ingresaWeb0() {
-          landingPage.ClickCrear();
+        nuevouser.ClickCrear();
           try { 
             Thread.sleep(5000);
         } catch (InterruptedException e) { 
@@ -32,9 +35,10 @@ public class SentraSteps {
         }
       }
 
+      //ingresar datos usuario
   @Then("ingreso datos USUARIO")
     public void ingresoCredenciales0() {
-        landingPage.credenciales0();
+      nuevouser.credenciales0();
         try { 
           Thread.sleep(5000);
       } catch (InterruptedException e) { 
@@ -43,9 +47,10 @@ public class SentraSteps {
       }
     }
  
+    //boton grabar usuario
   @Then("presiono boton GRABAR USUARIO")
     public void creaUser() {
-        landingPage.clickNew();
+      nuevouser.clickNew();
         try { 
           Thread.sleep(5000);
       } catch (InterruptedException e) { 
@@ -53,18 +58,26 @@ public class SentraSteps {
           e.printStackTrace();
       }
     }
-      
-    
-    PaginaPrincipal landingPage1 = new PaginaPrincipal();
+  
+   //validar mensaje crear usuario correctamente o erroneamente
+    @Then("validar mensaje crear usuario correctamente")
+    public void validaUser1() {
+      nuevouser.validaCrear();
+  }
+
+    //pasos para ingresar credenciales
+    PaginaPrincipal pantallaInicio = new PaginaPrincipal();
    
+    //ingresar a la web de sentra
     @Given("Ingreso a url")
       public void navegar() {
-          landingPage1.navegarSentra();
+          pantallaInicio.navegarSentra();
       }
    
+      //ingresar credenciales
     @When("Ingreso credenciales")
       public void ingresoCredenciales() {
-        landingPage1.credenciales();
+        pantallaInicio.credenciales();
         try { 
           Thread.sleep(5000);
       } catch (InterruptedException e) { 
@@ -73,9 +86,10 @@ public class SentraSteps {
       }
     }
    
+    //boton ingresar
     @When("Presiono boton INGRESAR")
       public void ingresaWeb() {
-          landingPage1.ClickIngresar();
+        pantallaInicio.ClickIngresar();
           try { 
             Thread.sleep(5000);
         } catch (InterruptedException e) { 
@@ -85,12 +99,14 @@ public class SentraSteps {
       }
       
     
-      PaginaHome landingPage2 = new PaginaHome();
+      //pasos para navegar en Home
+      PaginaHome pantallaHome = new PaginaHome();
    
 
+      //"Seleccionar boton Home"
       @Given("Seleccionar boton Home")
         public void btnHome() {
-            landingPage2.ClickIngHome();
+          pantallaHome.ClickIngHome();
             try { 
               Thread.sleep(5000);
           } catch (InterruptedException e) { 
@@ -99,14 +115,16 @@ public class SentraSteps {
           }
         }
        
+        //Presiono boton NUEVA TAREA
       @Then("Presiono boton NUEVA TAREA")
         public void btntarea() {
-            landingPage2.ClickIngTarea();
+          pantallaHome.ClickIngTarea();
         }
 
+        //Ingreso nueva tarea de Home
         @Then("Ingreso nueva tarea de Home")
         public void ingresoTarea() {
-            landingPage2.ingNvaTarea();
+          pantallaHome.ingNvaTarea();
             try { 
               Thread.sleep(5000);
           } catch (InterruptedException e) { 
@@ -115,9 +133,10 @@ public class SentraSteps {
           }
         }
 
+        //Presiono boton CREAR TAREA
         @Then("Presiono boton CREAR TAREA")
         public void GrabarTarea() {
-            landingPage2.ClickGrbTarea();
+          pantallaHome.ClickGrbTarea();
             try { 
               Thread.sleep(5000);
           } catch (InterruptedException e) { 
@@ -125,15 +144,77 @@ public class SentraSteps {
               e.printStackTrace();
           }
         }         
-  
-  
 
-    PaginaPerfil landingPage3 = new PaginaPerfil();
+
+      //validar mensaje de tarea creada correctamente
+        @Then("validar mensaje de tarea creada correctamente")
+        public void validaUser4() {
+        pantallaHome.validaCrear3();
+ }
+        
+  
+        //Presiono una tarea para editarla
+        @Then("Presiono una tarea para editarla")
+        public void clickenTareas() {
+          pantallaHome.ClickEnTarea1();
+            try { 
+              Thread.sleep(5000);
+          } catch (InterruptedException e) { 
+              Thread.currentThread().interrupt(); // Restablece el estado de interrupción
+              e.printStackTrace();
+          }
+        }         
+
+        //Presiono boton EDITAR TAREA
+        @Then("Presiono boton EDITAR TAREA")
+        public void clickenTarea2() {
+          pantallaHome.btnEnTarea1();
+            try { 
+              Thread.sleep(5000);
+          } catch (InterruptedException e) { 
+              Thread.currentThread().interrupt(); // Restablece el estado de interrupción
+              e.printStackTrace();
+          }
+        }      
+        
+                //editar la tarea
+                @Then("editar la tarea")
+                public void editarTarea() {
+                  pantallaHome.editLaTarea();
+                    try { 
+                      Thread.sleep(5000);
+                  } catch (InterruptedException e) { 
+                      Thread.currentThread().interrupt(); // Restablece el estado de interrupción
+                      e.printStackTrace();
+                  }
+                }
+
+        //Presiono MODIFICAR TAREA para guardar cambios
+        @Then("Presiono MODIFICAR TAREA para guardar cambios")
+        public void clickenTarea3() {
+          pantallaHome.btnEnTarea2();
+            try { 
+              Thread.sleep(5000);
+          } catch (InterruptedException e) { 
+              Thread.currentThread().interrupt(); // Restablece el estado de interrupción
+              e.printStackTrace();
+          }
+        }         
+
+   //validar mensaje de tarea creada correctamente
+   @Then("validar mensaje de tarea modificada correctamente")
+   public void validaUser2() {
+    pantallaHome.validaCrear2();
+ }
+
+
+        //pasos para actualizar datos del perfil del usuario
+    PaginaPerfil pantallaPerfil = new PaginaPerfil();
    
-
+        //boton ingreso al perfil
     @Given("Presiono el boton PERFIL")
       public void btnPerfil() {
-          landingPage3.ClickIngPerfil();
+        pantallaPerfil.ClickIngPerfil();
           try { 
             Thread.sleep(5000);
         } catch (InterruptedException e) { 
@@ -142,14 +223,16 @@ public class SentraSteps {
         }
       }
      
+      //boton editar datos del usuario
     @When("Presiono el boton EDITAR DATOS USUARIO")
       public void editUsr() {
-          landingPage3.EditarUsuario();
+        pantallaPerfil.EditarUsuario();
       }
 
+      //modificar datos del usuario
       @Then("Modifico los datos del usuario")
       public void modifUsr() {
-          landingPage3.modifUsuario();
+        pantallaPerfil.modifUsuario();
           try { 
             Thread.sleep(5000);
         } catch (InterruptedException e) { 
@@ -158,9 +241,10 @@ public class SentraSteps {
         }
       }
 
+      //boton grabar datos del usuario
       @Then("Presiono boton GRABAR USUARIO")
       public void GrabarUser() {
-          landingPage3.ClickGrbUsr();
+        pantallaPerfil.ClickGrbUsr();
           try { 
             Thread.sleep(5000);
         } catch (InterruptedException e) { 
@@ -170,17 +254,20 @@ public class SentraSteps {
       }
     
     
+      //pasos para cambiar password
+    PaginaClave pantallaClave = new PaginaClave();
 
-    PaginaClave landingPage4 = new PaginaClave();
-    
+
+    //boton cambiar contraseña
     @Given("Presiono el boton CAMBIAR CONTRASEÑA")
       public void cambioPass() {
-          landingPage4.ClickCamPass();
+        pantallaClave.ClickCamPass();
       }
 
+      //ingrasar nueva password
       @When("Ingreso contraseña nueva")
       public void modifClave() {
-          landingPage4.ingresoClave();
+        pantallaClave.ingresoClave();
           try { 
             Thread.sleep(5000);
         } catch (InterruptedException e) { 
@@ -189,9 +276,10 @@ public class SentraSteps {
         }
       }
 
+      //boton guardar contraseña
       @Then("Presiono el boton GUARDAR CONTRASEÑA")
       public void ClickGrClave() {
-          landingPage4.ClickGrClave();
+        pantallaClave.ClickGrClave();
           try { 
             Thread.sleep(5000);
         } catch (InterruptedException e) { 
@@ -200,11 +288,12 @@ public class SentraSteps {
         }
       }
 
-      Salir landingPage5 = new Salir();
+      //pasos para salir de la web
+      Salir pantallaSalir = new Salir();
     
       @Given("Presiono boton SALIR")
         public void SalirWeb() {
-          landingPage5.ClickSalir();
+          pantallaSalir.ClickSalir();
           try { 
             Thread.sleep(5000);
         } catch (InterruptedException e) { 
@@ -214,7 +303,7 @@ public class SentraSteps {
         }
   
 
-
+        //ejemplo para verificar
         public void Ejemplulis() {
           String palabraEsperada = "Pepe";
           String palabraEncontrada = "Papa";

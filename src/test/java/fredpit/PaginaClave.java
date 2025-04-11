@@ -13,10 +13,12 @@ public class PaginaClave extends BasePage {
         super(driver);
     }
  
+    //funcion para boton cambiar password
     public void ClickCamPass() {;
         clickElement(btnCambClave);
     }
 
+    //funcion escritura password
     public void ingresoClave() {;
         clear(clave); 
         clear(repiteclave); 
@@ -24,6 +26,7 @@ public class PaginaClave extends BasePage {
         write(repiteclave,"mayo1979");   
     }
 
+    //boton grabar password    
     public void ClickGrClave(){
         clickElement(btngrabarclave);
     }

@@ -5,6 +5,7 @@ Scenario: Crea Usuario
     When presiono boton CREAR USUARIO
     Then ingreso datos USUARIO
     Then presiono boton GRABAR USUARIO
+    Then validar mensaje crear usuario correctamente
 
 Scenario: Pantalla de inicio del sitio de sentra para ingresar credenciales
     Given Ingreso a url
@@ -16,6 +17,12 @@ Scenario: Ingreso a Home a crear Tareas del usuario
     Then Presiono boton NUEVA TAREA
     Then Ingreso nueva tarea de Home
     Then Presiono boton CREAR TAREA
+    Then validar mensaje de tarea creada correctamente
+    Then Presiono una tarea para editarla
+    Then Presiono boton EDITAR TAREA
+    Then editar la tarea
+    Then Presiono MODIFICAR TAREA para guardar cambios
+    Then validar mensaje de tarea modificada correctamente
 
 Scenario: Validar Ingreso a Perfil para Modificar datos del usuario
     Given Presiono el boton PERFIL

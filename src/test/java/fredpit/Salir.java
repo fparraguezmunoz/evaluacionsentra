@@ -9,6 +9,7 @@ public class Salir extends BasePage {
         super(driver);
     }
  
+    //boton para salir de la web
     public void ClickSalir() {;
         clickElement(btnSalir);
     }
