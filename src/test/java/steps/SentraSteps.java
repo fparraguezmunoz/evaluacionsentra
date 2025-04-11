@@ -120,18 +120,29 @@ public class SentraSteps {
           }
         }
        
-        //ordena ascendente
-        @When("ordena ascendente")
-        public void clickascen() {
+        //ordena por titulo
+        @When("ordena por titulo")
+        public void clickascen1() {
           pantallaHome.btnEnTarea8();
         }
 
-        //ordena descendente
-      @Then("ordena descendente")
-      public void clickdesc() {
-        pantallaHome.btnEnTarea9();
-      }
+        //ordena por prioridad
+        @Then("ordena por prioridad")
+        public void clickascen2() {
+            pantallaHome.btnEnTarea88();
+        }
 
+
+        //ordena por fecha creacion
+        @Then("ordena por fecha creacion")
+        public void clickascen3() {
+          pantallaHome.btnEnTarea888();
+        }
+        //ordena por fecha vencimiento
+        @Then("ordena por fecha vencimiento")
+        public void clickascen4() {
+          pantallaHome.btnEnTarea8888();
+        }
 
         //Presiono boton NUEVA TAREA
       @When("Presiono boton NUEVA TAREA")
@@ -237,6 +248,7 @@ public class SentraSteps {
    public void validamodi() {
     pantallaHome.validaCrear4();
  }
+
 
 
         //pasos para actualizar datos del perfil del usuario

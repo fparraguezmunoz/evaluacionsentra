@@ -1,6 +1,11 @@
 package fredpit;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.asserts.SoftAssert;
+
 
 public class PaginaHome extends BasePage {
  
@@ -32,16 +37,30 @@ public class PaginaHome extends BasePage {
         clickElement(btnIngHome);
     }
 
-             //ordena ascendente
-             public void btnEnTarea8() {;
-                clickElement(arriba);
-            }  
-                       
-            //ordena descendente
-            public void btnEnTarea9() {;
-            clickElement(abajo);
-            } 
-        
+    //ordena por titulo
+    public void btnEnTarea8() {;
+        WebElement tituloHeader = driver.findElement(By.xpath("//th[.//span[contains(text(),'Título')]]"));
+        tituloHeader.click();
+    }  
+
+    //ordena por prioridad
+    public void btnEnTarea88() {;
+        WebElement prioridadHeader = driver.findElement(By.xpath("//th[.//span[contains(text(),'Prioridad')]]"));
+        prioridadHeader.click();
+    }  
+
+    //ordena por fecha creacion
+    public void btnEnTarea888() {;
+        WebElement fcreacionHeader = driver.findElement(By.xpath("//th[.//span[contains(text(),'Fecha Creación')]]"));
+        fcreacionHeader.click();
+    }  
+
+    //ordena por fecha vencimiento
+    public void btnEnTarea8888() {;
+        WebElement fvencimientoHeader = driver.findElement(By.xpath("//th[.//span[contains(text(),'Fecha Vencimiento')]]"));
+        fvencimientoHeader.click();
+    }  
+    
 
     //boton crear nueva tarea
     public void ClickIngTarea() {;

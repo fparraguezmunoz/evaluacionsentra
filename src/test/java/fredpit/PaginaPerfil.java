@@ -1,6 +1,5 @@
 package fredpit;
 
-import org.openqa.selenium.By;
 import org.testng.asserts.SoftAssert;
 
 public class PaginaPerfil extends BasePage {

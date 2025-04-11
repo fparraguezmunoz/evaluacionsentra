@@ -1,15 +1,12 @@
 package Runner;
  
-import static org.junit.Assert.assertTrue;
 
 import org.junit.AfterClass;
 import org.junit.runner.RunWith;
-import org.testng.annotations.Test;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import fredpit.BasePage;
-import fredpit.PaginaPrincipal;
 
  
 @RunWith(Cucumber.class)

@@ -15,9 +15,11 @@ Scenario: Pantalla de inicio
     
 Scenario: Ingreso a Home a crear Tareas del usuario
     Given Seleccionar boton Home
-    Then ordena ascendente
-    Then ordena descendente
-    When Presiono boton NUEVA TAREA
+    When ordena por titulo
+    Then ordena por prioridad
+    Then ordena por fecha creacion
+    Then ordena por fecha vencimiento
+    Then Presiono boton NUEVA TAREA
     Then Ingreso nueva tarea de Home
     Then Presiono boton CREAR TAREA
     Then validar mensaje de tarea creada correctamente
