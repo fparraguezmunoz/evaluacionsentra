@@ -1,9 +1,7 @@
 package fredpit;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.asserts.SoftAssert;
 
 
@@ -20,8 +18,6 @@ public class PaginaHome extends BasePage {
     private String btnEnTarea3 = "//button[normalize-space()='Modificar Tarea']";
     private String validaCrear2 = "//div[@class='MuiAlert-message css-1xsto0d']";
     private String validaCrear3 = "//div[@class='MuiAlert-message css-1xsto0d']";
-    private String arriba = "//span[@class='MuiButtonBase-root MuiTableSortLabel-root Mui-active css-7fdmwy']//*[name()='svg']//*[name()='path' and contains(@d,'M20 12l-1.')]";
-    private String abajo = "//span[@class='MuiButtonBase-root MuiTableSortLabel-root Mui-active css-7fdmwy']//*[name()='svg']";
     private String errorperfil1 = "//div[@class='MuiAlert-message css-1xsto0d']";
 
 
