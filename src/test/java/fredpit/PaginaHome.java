@@ -15,6 +15,8 @@ public class PaginaHome extends BasePage {
     private String btnEnTarea3 = "//button[normalize-space()='Modificar Tarea']";
     private String validaCrear2 = "//div[@class='MuiAlert-message css-1xsto0d']";
     private String validaCrear3 = "//div[@class='MuiAlert-message css-1xsto0d']";
+    private String arriba = "//span[@class='MuiButtonBase-root MuiTableSortLabel-root Mui-active css-7fdmwy']//*[name()='svg']//*[name()='path' and contains(@d,'M20 12l-1.')]";
+    private String abajo = "//span[@class='MuiButtonBase-root MuiTableSortLabel-root Mui-active css-7fdmwy']//*[name()='svg']";
 
     SoftAssert revisa = new SoftAssert();
 
@@ -79,5 +81,19 @@ public class PaginaHome extends BasePage {
     public void validaCrear2() {
         revisa.assertEquals("Tarea modificada correctamente",obtenerTexto(validaCrear2));
         revisa.assertAll();
-    }       
+
+        
+    }
+    
+                //ordena ascendente
+                public void btnEnTarea8() {;
+                    clickElement(arriba);
+                }  
+
+                
+                //ordena descendente
+                public void btnEnTarea9() {;
+                clickElement(abajo);
+                }  
+
 }

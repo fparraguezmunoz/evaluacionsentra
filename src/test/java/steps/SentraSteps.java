@@ -65,6 +65,12 @@ public class SentraSteps {
       nuevouser.validaCrear();
   }
 
+  //Registro fallido
+   @Then("Registro fallido")
+   public void validaUser5() {
+     nuevouser.validaCrear5();
+ }
+
     //pasos para ingresar credenciales
     PaginaPrincipal pantallaInicio = new PaginaPrincipal();
    
@@ -113,6 +119,22 @@ public class SentraSteps {
               e.printStackTrace();
           }
         }
+
+        //ordena ascendente
+        @Then("ordena ascendente")
+        public void clickascen() {
+          pantallaHome.btnEnTarea8();
+        }
+
+        //ordena descendente
+      @Then("ordena descendente")
+      public void clickdesc() {
+        pantallaHome.btnEnTarea9();
+      }
+
+
+
+
        
         //Presiono boton NUEVA TAREA
       @Then("Presiono boton NUEVA TAREA")
@@ -286,6 +308,21 @@ public class SentraSteps {
             e.printStackTrace();
         }
       }
+
+   //validar mensaje cambio de Contraseña cambiada correctamente
+   @Then("validar mensaje cambio de Contraseña cambiada correctamente")
+   public void validaUser6() {
+    pantallaClave.validaCrea6();
+ }
+
+
+    //Error con mensaje Contraseñas no coinciden
+    @Then("Error con mensaje Contraseñas no coinciden")
+    public void validaUser7() {
+      pantallaClave.validaCrea7();
+  }
+
+
 
       //pasos para salir de la web
       Salir pantallaSalir = new Salir();

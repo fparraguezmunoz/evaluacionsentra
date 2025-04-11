@@ -6,6 +6,7 @@ Scenario: Crea Usuario
     Then ingreso datos USUARIO
     Then presiono boton GRABAR USUARIO
     Then validar mensaje crear usuario correctamente
+    Then Registro fallido
 
 Scenario: Pantalla de inicio
     Given Ingreso a url
@@ -14,6 +15,8 @@ Scenario: Pantalla de inicio
     
 Scenario: Ingreso a Home a crear Tareas del usuario
     Given Seleccionar boton Home
+    When ordena ascendente
+    Then ordena descendente
     Then Presiono boton NUEVA TAREA
     Then Ingreso nueva tarea de Home
     Then Presiono boton CREAR TAREA
@@ -34,6 +37,8 @@ Scenario: Validar Ingreso a Perfil para Modificar datos del usuario
     Given Presiono el boton CAMBIAR CONTRASEÑA
     When Ingreso contraseña nueva
     Then Presiono el boton GUARDAR CONTRASEÑA
+    Then validar mensaje cambio de Contraseña cambiada correctamente
+    Then Error con mensaje Contraseñas no coinciden
 
  Scenario: Validar boton Salir y que rediriga a inicio
     Given Presiono boton SALIR

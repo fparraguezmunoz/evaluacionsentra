@@ -15,7 +15,8 @@ public class CrearUsuario extends BasePage {
     private String repitepass = "//input[@id='repeat_password']";
     private String btnRegUser = "//button[normalize-space()='Registrar Usuario']";
     private String creadoOk = "//div[@class='MuiAlert-message css-1xsto0d']";
-    
+    private String creadoNoOk = "//div[@class='MuiAlert-message css-1xsto0d']";
+
     SoftAssert revisa = new SoftAssert();
 
 
@@ -54,5 +55,10 @@ public class CrearUsuario extends BasePage {
         revisa.assertAll();
     }
      
-
+        // registro fallido
+        public void validaCrear5() {
+            revisa.assertNotEquals("Contraseñas no coinciden",obtenerTexto(creadoNoOk));
+            revisa.assertAll();
+        }
+         
 }
