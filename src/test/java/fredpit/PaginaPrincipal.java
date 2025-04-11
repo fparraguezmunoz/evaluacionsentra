@@ -1,12 +1,12 @@
 package fredpit;
 
+
 public class PaginaPrincipal extends BasePage {
  
     private String botonIngresar = "//button[@type='submit']";
     private String usuario = "//input[@id='email']";
     private String password = "//input[@id='password']";
 
-    
 
     public PaginaPrincipal() {
         super(driver);
@@ -27,6 +27,4 @@ public class PaginaPrincipal extends BasePage {
     public void ClickIngresar() {
         clickElement(botonIngresar);  
     }
-
-
 }

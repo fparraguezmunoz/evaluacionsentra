@@ -74,8 +74,8 @@ public class SentraSteps {
           pantallaInicio.navegarSentra();
       }
    
-      //ingresar credenciales
-    @When("Ingreso credenciales")
+      //validar que usuario ingrese credenciales
+    @When("validar que usuario ingrese credenciales")
       public void ingresoCredenciales() {
         pantallaInicio.credenciales();
         try { 
@@ -86,7 +86,7 @@ public class SentraSteps {
       }
     }
    
-    //boton ingresar
+    //Presiono boton INGRESAR
     @When("Presiono boton INGRESAR")
       public void ingresaWeb() {
         pantallaInicio.ClickIngresar();
@@ -97,8 +97,7 @@ public class SentraSteps {
             e.printStackTrace();
         }
       }
-      
-    
+
       //pasos para navegar en Home
       PaginaHome pantallaHome = new PaginaHome();
    

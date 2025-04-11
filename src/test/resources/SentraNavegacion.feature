@@ -7,10 +7,10 @@ Scenario: Crea Usuario
     Then presiono boton GRABAR USUARIO
     Then validar mensaje crear usuario correctamente
 
-Scenario: Pantalla de inicio del sitio de sentra para ingresar credenciales
+Scenario: Pantalla de inicio
     Given Ingreso a url
-    When Ingreso credenciales
-    When Presiono boton INGRESAR
+    When validar que usuario ingrese credenciales
+    Then Presiono boton INGRESAR
     
 Scenario: Ingreso a Home a crear Tareas del usuario
     Given Seleccionar boton Home
