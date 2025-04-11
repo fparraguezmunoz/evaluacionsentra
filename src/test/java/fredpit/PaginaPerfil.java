@@ -1,6 +1,7 @@
 package fredpit;
 
 import org.openqa.selenium.By;
+import org.testng.asserts.SoftAssert;
 
 public class PaginaPerfil extends BasePage {
  
@@ -11,6 +12,9 @@ public class PaginaPerfil extends BasePage {
     private String apellido = "//input[@id='lastname']";
     private String email = "//input[@id='email']";
     private String btnGrbUser = "//button[normalize-space()='Modificar Usuario']";
+    private String perfilok = "//div[@class='MuiAlert-message css-1xsto0d']";
+
+    SoftAssert revisa = new SoftAssert();
 
     public PaginaPerfil() {
         super(driver);
@@ -39,5 +43,14 @@ public class PaginaPerfil extends BasePage {
     //boton grabar usuario actualizado
     public void ClickGrbUsr() {;
         clickElement(btnGrbUser);
-    }    
+    } 
+    
+       // valida Datos de usuario modificados correctamente
+       public void validaCrear5() {
+        revisa.assertEquals("Datos de usuario modificados correctamente",obtenerTexto(perfilok));
+        revisa.assertAll();
+    } 
+
+    
+
 }

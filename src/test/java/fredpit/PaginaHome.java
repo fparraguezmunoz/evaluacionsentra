@@ -17,6 +17,8 @@ public class PaginaHome extends BasePage {
     private String validaCrear3 = "//div[@class='MuiAlert-message css-1xsto0d']";
     private String arriba = "//span[@class='MuiButtonBase-root MuiTableSortLabel-root Mui-active css-7fdmwy']//*[name()='svg']//*[name()='path' and contains(@d,'M20 12l-1.')]";
     private String abajo = "//span[@class='MuiButtonBase-root MuiTableSortLabel-root Mui-active css-7fdmwy']//*[name()='svg']";
+    private String errorperfil1 = "//div[@class='MuiAlert-message css-1xsto0d']";
+
 
     SoftAssert revisa = new SoftAssert();
 
@@ -29,6 +31,17 @@ public class PaginaHome extends BasePage {
     public void ClickIngHome() {;
         clickElement(btnIngHome);
     }
+
+             //ordena ascendente
+             public void btnEnTarea8() {;
+                clickElement(arriba);
+            }  
+                       
+            //ordena descendente
+            public void btnEnTarea9() {;
+            clickElement(abajo);
+            } 
+        
 
     //boton crear nueva tarea
     public void ClickIngTarea() {;
@@ -54,6 +67,20 @@ public class PaginaHome extends BasePage {
         revisa.assertEquals("Tarea creada correctamente",obtenerTexto(validaCrear3));
         revisa.assertAll();
     }  
+
+
+        // Se produjo un error al obtener información de Tarea.
+        public void errorperfil4() {
+            revisa.assertNotEquals("Se produjo un error al obtener información de Tarea.",obtenerTexto(errorperfil1));
+            revisa.assertAll();
+        }  
+        
+        
+        // Request failed with status code 400
+        public void errorperfil5() {
+            revisa.assertNotEquals("Request failed with status code 400",obtenerTexto(errorperfil1));
+            revisa.assertAll();
+        }  
    
     public void ClickEnTarea1() {;
         clickElement(btnEnTarea1);
@@ -77,23 +104,15 @@ public class PaginaHome extends BasePage {
             clickElement(btnEnTarea3);
         }  
 
+
             // valida mensaje de modificacion de usuario correcta
-    public void validaCrear2() {
+    public void validaCrear4() {
         revisa.assertEquals("Tarea modificada correctamente",obtenerTexto(validaCrear2));
         revisa.assertAll();
 
         
     }
     
-                //ordena ascendente
-                public void btnEnTarea8() {;
-                    clickElement(arriba);
-                }  
 
-                
-                //ordena descendente
-                public void btnEnTarea9() {;
-                clickElement(abajo);
-                }  
 
 }

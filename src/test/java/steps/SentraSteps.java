@@ -61,14 +61,14 @@ public class SentraSteps {
   
    //validar mensaje crear usuario correctamente o erroneamente
     @Then("validar mensaje crear usuario correctamente")
-    public void validaUser1() {
-      nuevouser.validaCrear();
+    public void validarmsje() {
+      nuevouser.validaCrear1();
   }
 
   //Registro fallido
    @Then("Registro fallido")
-   public void validaUser5() {
-     nuevouser.validaCrear5();
+   public void registrofall() {
+     nuevouser.validaCrear2();
  }
 
     //pasos para ingresar credenciales
@@ -119,9 +119,9 @@ public class SentraSteps {
               e.printStackTrace();
           }
         }
-
+       
         //ordena ascendente
-        @Then("ordena ascendente")
+        @When("ordena ascendente")
         public void clickascen() {
           pantallaHome.btnEnTarea8();
         }
@@ -133,11 +133,8 @@ public class SentraSteps {
       }
 
 
-
-
-       
         //Presiono boton NUEVA TAREA
-      @Then("Presiono boton NUEVA TAREA")
+      @When("Presiono boton NUEVA TAREA")
         public void btntarea() {
           pantallaHome.ClickIngTarea();
         }
@@ -169,11 +166,22 @@ public class SentraSteps {
 
       //validar mensaje de tarea creada correctamente
         @Then("validar mensaje de tarea creada correctamente")
-        public void validaUser4() {
+        public void validamensaje() {
         pantallaHome.validaCrear3();
  }
         
-  
+      // Se produjo un error al obtener información de Tarea.
+      @Then("Se produjo un error al obtener información de Tarea.")
+      public void validatareea() {
+      pantallaHome.errorperfil4();
+}
+      
+      // Request failed with status code 400
+      @Then("Request failed with status code 400")
+      public void errorer() {
+      pantallaHome.errorperfil5();
+}
+      
         //Presiono una tarea para editarla
         @Then("Presiono una tarea para editarla")
         public void clickenTareas() {
@@ -222,10 +230,12 @@ public class SentraSteps {
           }
         }         
 
+
+
    //validar mensaje de tarea creada correctamente
    @Then("validar mensaje de tarea modificada correctamente")
-   public void validaUser2() {
-    pantallaHome.validaCrear2();
+   public void validamodi() {
+    pantallaHome.validaCrear4();
  }
 
 
@@ -274,7 +284,15 @@ public class SentraSteps {
         }
       }
     
-    
+   //validar mensaje Datos de usuario modificados correctamente
+   @Then("validar mensaje Datos de usuario modificados correctamente")
+   public void validadatos() {
+    pantallaPerfil.validaCrear5();
+ }
+  
+
+
+
       //pasos para cambiar password
     PaginaClave pantallaClave = new PaginaClave();
 
@@ -311,14 +329,14 @@ public class SentraSteps {
 
    //validar mensaje cambio de Contraseña cambiada correctamente
    @Then("validar mensaje cambio de Contraseña cambiada correctamente")
-   public void validaUser6() {
+   public void validacontras() {
     pantallaClave.validaCrea6();
  }
 
 
     //Error con mensaje Contraseñas no coinciden
     @Then("Error con mensaje Contraseñas no coinciden")
-    public void validaUser7() {
+    public void errorpass() {
       pantallaClave.validaCrea7();
   }
 

@@ -15,23 +15,29 @@ Scenario: Pantalla de inicio
     
 Scenario: Ingreso a Home a crear Tareas del usuario
     Given Seleccionar boton Home
-    When ordena ascendente
+    Then ordena ascendente
     Then ordena descendente
-    Then Presiono boton NUEVA TAREA
+    When Presiono boton NUEVA TAREA
     Then Ingreso nueva tarea de Home
     Then Presiono boton CREAR TAREA
     Then validar mensaje de tarea creada correctamente
+    Then Se produjo un error al obtener información de Tarea.
+    Then Request failed with status code 400
     Then Presiono una tarea para editarla
     Then Presiono boton EDITAR TAREA
     Then editar la tarea
     Then Presiono MODIFICAR TAREA para guardar cambios
+
     Then validar mensaje de tarea modificada correctamente
+
 
 Scenario: Validar Ingreso a Perfil para Modificar datos del usuario
     Given Presiono el boton PERFIL
     When Presiono el boton EDITAR DATOS USUARIO
     Then Modifico los datos del usuario
     Then Presiono boton GRABAR USUARIO
+    Then validar mensaje Datos de usuario modificados correctamente
+
 
  Scenario: Validar Cambio de contraseña
     Given Presiono el boton CAMBIAR CONTRASEÑA

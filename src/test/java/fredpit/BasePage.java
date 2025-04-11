@@ -114,10 +114,10 @@ public class BasePage {
         driver.findElement(By.xpath(xpath)).clear();
     }
     
-    public boolean isElementVisible(String botonLogout) {
+    //public boolean isElementVisible(String botonLogout) {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'isElementVisible'");
-    }
+    //    throw new UnsupportedOperationException("Unimplemented method 'isElementVisible'");
+    //}
 
     // recuperar texto
     public String obtenerTexto(String locator) {
